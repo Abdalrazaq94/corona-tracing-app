@@ -25,5 +25,8 @@
     "nodemon": "^2.0.2",
     "jest": "^25.1.0",
     "supertest": "^4.0.2"
-  }
+  },
+  "engines": {
+  "node": "20.x"
+}
 }
