@@ -7,7 +7,7 @@ const CountryPicker = ({ handleCountryChange }) => {
   const [fetchedCountries, setFetchedCountries] = useState([]);
   useEffect(() => {
     const fetchAPI = async () => {
-      setFetchedCountries(await fetchCountries());
+      setFetchedCountries(await fetchCountries() || []);
     };
     fetchAPI();
   }, [setFetchedCountries]);
@@ -24,7 +24,6 @@ const CountryPicker = ({ handleCountryChange }) => {
             {country}
           </option>
         ))}
-        ;
       </NativeSelect>
     </FormControl>
   );
