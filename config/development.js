@@ -1,4 +1,4 @@
 module.exports = {
   MODE: 'development',
-  MONGO_URI: 'mongodb://localhost:27017/corona',
+  MONGO_URI: 'mongodb+srv://infoabd94t_db_user:FtxfgEvHbHYxdXfj@cluster0.wws4hre.mongodb.net/corona?appName=Cluster0',
 };
