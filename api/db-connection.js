@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 const config = require('../config');
 
-mongoose.connect(config.MONGO_URI, { useNewUrlParser: true }, function(err) {
+mongoose.connect(config.MONGO_URI, { 
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}, function(err) {
   if (err) {
     throw err;
   } else {
@@ -9,4 +12,4 @@ mongoose.connect(config.MONGO_URI, { useNewUrlParser: true }, function(err) {
   }
 });
 
-module.export = mongoose;
+module.exports = mongoose;
