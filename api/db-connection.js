@@ -4,12 +4,10 @@ const config = require('../config');
 mongoose.connect(config.MONGO_URI, { 
   useNewUrlParser: true,
   useUnifiedTopology: true,
-}, function(err) {
-  if (err) {
-    throw err;
-  } else {
-    console.log(`Successfully connected to ${config.MONGO_URI}`);
-  }
+}).then(() => {
+  console.log(`Successfully connected to ${config.MONGO_URI}`);
+}).catch((err) => {
+  throw err;
 });
 
 module.exports = mongoose;
