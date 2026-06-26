@@ -1,15 +1,15 @@
-// this is the main entry point for your full app
-// it serves your frontend & provides access to your API
-
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const config = require("./config");
 const api = require("./api/");
-
 const app = express();
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+
+app.use(cors({ 
+  credentials: true, 
+  origin: ["http://localhost:3000", "https://corona-tracing-app-production.up.railway.app"] 
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -39,4 +39,4 @@ app.listen(process.env.PORT || config.PORT, () => {
   console.log(
     `listening at http://localhost:${process.env.PORT || config.PORT} (${config.MODE} mode)`
   );
-}); 
+});
