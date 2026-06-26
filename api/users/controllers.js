@@ -5,7 +5,7 @@ const path = require("path");
 const fs = require("fs");
 
 const saltRounds = 10;
-const secret = fs.readFileSync(path.resolve(__dirname, "../../secret.key"));
+const secret = process.env.SECRET;
 
 const controllers = {
   register: async (req, res) => {
